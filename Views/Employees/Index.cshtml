@@ -1,0 +1,92 @@
+﻿@model IEnumerable<CarSharing_Angajati.Models.Employees>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Employees</h1>
+
+<table class="table"> 
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.EmpName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EmpBirthDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EmpIDNP)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Gender)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EmpEmail)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EmpAdress)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EmpPhoneNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EmpDriverLicense)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EmpPosition)
+            </th>
+            <th> 
+                <a asp-action="AddorEdit" class="btn btn-outline-success">
+                    <i class="fa-solid fa-plus"></i> New</a>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.EmpName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EmpBirthDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EmpIDNP)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Gender)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EmpEmail)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EmpAdress)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EmpPhoneNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EmpDriverLicense)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EmpPosition)
+            </td>
+            <td>   
+               <form asp-action="Delete" asp-route-id="@item.EmpId" >
+                        <div class="btn-group btn-group-sm">
+                        <a asp-action="AddorEdit" asp-route-id="@item.EmpId" class="btn btn-warning">
+                            <i class="fa-solid fa-pen-to-square"></i>
+                        </a>
+                        <button type="submit" class="btn btn-danger"
+                     onclick="return confirm ('Are you sure you want to delete this record?')">
+                         <i class="far fa-trash-alt"></i>                     
+                         </button>
+                        </div>
+               </form>
+            </td>
+        </tr>
+
+}
+    </tbody>
+</table>

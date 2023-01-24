@@ -1,0 +1,40 @@
+html {
+  font-size: 14px;
+
+}
+
+@media (min-width: 800px) {
+  html {
+    font-size: 14px;
+
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100;
+  
+}
+header 
+{
+    background-color:lightcyan;
+}
+
+body {
+    margin-bottom: 60px;
+    background-color: lemonchiffon;
+}
+
+.form-group input[type=submit]
+.form-group label
+{
+    text-transform: uppercase
+}
+
+.form-group label
+{
+    color:gray
+}
+
+
+
